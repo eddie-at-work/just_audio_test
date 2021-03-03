@@ -63,6 +63,10 @@ class _MyHomePageState extends State<MyHomePage> {
       File file = File('$appDocPath/testing.m4a');
       _writtenFile = await file.writeAsBytes(bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes));
       log('- File path: ${_writtenFile.path}');
+
+      log('- Start 1 second delay');
+      await Future.delayed(Duration(seconds: 1)); //Insert delay
+      log('- End 1 second delay');
     }
 
     //Set the file path of player
